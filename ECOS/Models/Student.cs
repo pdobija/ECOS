@@ -15,7 +15,7 @@ namespace ECOS.Models
         public string First_name { set; get; }
         public string Last_name { set; get; }
 
-        public virtual Login Login { set; get; }
+        public  Login Login { set; get; }
         public virtual Student_on_semester Student_on_semester { set; get; }
     }
 }

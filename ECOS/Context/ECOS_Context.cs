@@ -10,6 +10,10 @@ namespace ECOS
 {
     public class ECOS_Context : DbContext
     {
+        public ECOS_Context():base("ECOS_DataBase")
+        {
+            Database.SetInitializer<ECOS_Context>(new MigrateDatabaseToLatestVersion<ECOS_Context,ECOS.Migrations.Configuration>("ECOS_DataBase"));
+        }
         public DbSet<Login> Logins { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Worker> Worker { get; set; }

@@ -28,15 +28,6 @@ namespace ECOS
   
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            using (ECOS_Context db = new ECOS_Context())
-            {
-                Student s = new Student();
-                s.First_name = "s";
-                db.Students.Add(s);
-                db.SaveChanges();
-            }
-        }
+  
     }
 }

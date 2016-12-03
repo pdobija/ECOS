@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ECOS.Models
 {
     public class Login
-    {
-     
+    {    
         [Key]
         public string User_name { get; set; }
         public string Password { set; get; }
@@ -23,11 +18,5 @@ namespace ECOS.Models
         public virtual Student Students { set; get; }
         [ForeignKey("Worker_ID")]
         public virtual Worker Workers { set; get; }
-
-
-
-
-
-
     }
 }

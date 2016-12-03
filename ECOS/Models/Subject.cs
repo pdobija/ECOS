@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace ECOS.Models
 {
-    public class Semester
+    public class Subject
     {
-        public Semester()
+        public Subject()
         {
-            Students = new List<Student>();
             SubjectSemesters = new List<SubjectSemester>();
         }
         [Key]
-        public int Semester_ID { set; get; }
-        public string Course { set; get; }
-        public int Year { set; get; }
-        public int Semester_number { set; get; }
-        public virtual ICollection<Student> Students { set; get; }
+        public string Subject_code { set; get; }
+        public string Subject_name { set; get; }
+
         public virtual ICollection<SubjectSemester> SubjectSemesters { set; get; }
     }
 }

@@ -80,9 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Section.cs" />
     <Compile Include="Models\Semester.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\Student_on_semester.cs" />
+    <Compile Include="Models\StudentSection.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\SubjectSemester.cs" />
     <Compile Include="Models\Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

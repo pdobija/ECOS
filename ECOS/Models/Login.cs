@@ -11,8 +11,8 @@ namespace ECOS.Models
         public string Password { set; get; }
         public string Role { set; get; }
         public DateTime? Account_date { set; get; }
-        public int Album_number { set; get; }
-        public int Worker_ID { set; get; }
+        public int? Album_number { set; get; }
+        public int? Worker_ID { set; get; }
 
         [ForeignKey("Album_number")]
         public virtual Student Students { set; get; }

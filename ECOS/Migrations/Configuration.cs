@@ -15,6 +15,10 @@ namespace ECOS.Migrations
 
         protected override void Seed(ECOS.ECOS_Context context)
         {
+
+
+            context.Worker.AddOrUpdate(new Models.Worker() { Worker_ID = 1, First_name = "Piotr", Last_name = "Dobija" });
+            context.Logins.AddOrUpdate(new Models.Login() { Worker_ID = 1, User_name = "admin", Password = "21232f297a57a5a743894a0e4a801fc3", Role = "ADM"});
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

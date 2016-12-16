@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="ECOS.View.StudentsListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ECOS.View"
+              x:Name="_this"
+             xmlns:viewModels="clr-namespace:ECOS.ViewModel"
+             mc:Ignorable="d" Height="265" Width="555"
+             d:DataContext="{Binding Path=Student, Source={StaticResource Locator}}" >
+    <Grid Margin="0,-1,0,1">
+        <ListView ItemsSource="{Binding ItemsSource, ElementName=_this}"
+            SelectedItem="{Binding SelectedItem, ElementName=_this}" Margin="0,90,0,0" FontFamily="Times New Roman" FontSize="16">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  Width="120" Header="Album number" DisplayMemberBinding="{Binding Album_number}" />
+                    <GridViewColumn Width="170" Header="First Name" DisplayMemberBinding="{Binding First_name}"/>
+                    <GridViewColumn Width="170" Header="Last Name" DisplayMemberBinding="{Binding Last_name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="181,17,-1,0" ToolTipService.IsEnabled="True" ToolTip="Fraze type from which you want to start search" TextWrapping="Wrap" Text="{Binding First_name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="180,52,0,0" ToolTipService.IsEnabled="True" ToolTip="Fraze type from which you want to start search" TextWrapping="Wrap" Text="{Binding Last_name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label" Content="First name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,14,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label1" Content="Last name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,49,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Button x:Name="button" Content="Search" Cursor="Hand" Command="{Binding GetStudentsCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="425,30,0,0" FontFamily="Times New Roman" FontSize="16" Height="30">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</UserControl>

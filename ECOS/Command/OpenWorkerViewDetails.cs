@@ -25,9 +25,9 @@ namespace ECOS.Command
         public void Execute(object parameter)
         {
             Worker worker = parameter as Worker;
-            WorkerViewModel viewModel = worker != null
-                                                    ? new WorkerViewModel(worker)
-                                                    : new WorkerViewModel();
+            WorkerDetailsViewModel viewModel = worker != null
+                                                    ? new WorkerDetailsViewModel(worker)
+                                                    : new WorkerDetailsViewModel();
             WorkerViewDetails editView = new WorkerViewDetails
             {
                 DataContext = viewModel
@@ -36,7 +36,7 @@ namespace ECOS.Command
             editView.ShowDialog();
             if (AfterExecuted != null)
             {
-                AfterExecuted.Invoke(viewModel.worker);
+                AfterExecuted.Invoke(viewModel.CurrentWorker);
             }
         }
     }

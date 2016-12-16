@@ -7,22 +7,29 @@
         xmlns:viewmodel="clr-namespace:ECOS.ViewModel"
         mc:Ignorable="d"
         Name="_this"
-        Title="WorkerViewDetails" Height="300" Width="300" ResizeMode="NoResize">
+        Title="WORKER INFO" Height="316" Width="303" ResizeMode="NoResize">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ScrollBarColorKey}}"/>
+    </Window.Background>
     <Window.DataContext>
-        <viewmodel:WorkerViewModel/>
+        <viewmodel:WorkerDetailsViewModel/>
     </Window.DataContext>
     <Grid>
-        <TextBox x:Name="textBox"  HorizontalAlignment="Left" Height="23" IsEnabled="false" TextWrapping="Wrap" Text="{Binding worker.Worker_ID, UpdateSourceTrigger=PropertyChanged}"   VerticalAlignment="Top" Width="120" Margin="125,48,0,0"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding worker.First_name,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="125,91,0,0"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding worker.Last_name,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="125,133,0,0"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding worker.Degree,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="125,175,0,0"/>
-        <Label x:Name="label" Content="Worker ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,46,0,0"/>
-        <Label x:Name="label1" Content="* First name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,90,0,0"/>
-        <Label x:Name="label2" Content="* Last name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,134,0,0"/>
-        <Label x:Name="label3" Content="Degree:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,172,0,0"/>
-        <Label x:Name="label4" Content="Worker INFO" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="button1" Content="OK"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="45,230,0,0" Command="{Binding ClsWorkerDetails}" CommandParameter="{Binding ElementName=_this}"/>
-        <Label x:Name="label1_Copy" Foreground="Red" Content="* required fields" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="190,234,0,0"/>
+        <TextBox x:Name="textBox"  HorizontalAlignment="Left" Height="23" IsEnabled="false" TextWrapping="Wrap" Text="{Binding CurrentWorker.Worker_ID, UpdateSourceTrigger=PropertyChanged}"   VerticalAlignment="Top" Width="120" Margin="125,56,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding CurrentWorker.First_name,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="125,99,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding CurrentWorker.Last_name,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="125,143,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding CurrentWorker.Degree,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="125,184,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label" Content="Worker ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,54,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label1" Content="* First name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,97,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label2" Content="* Last name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,140,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label3" Content="Degree:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,181,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label4" Content="Worker INFO" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <Button x:Name="button1" Content="OK"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Margin="24,231,0,0" Command="{Binding CloseWindowCommand}" CommandParameter="{Binding ElementName=_this}" Cursor="Hand" FontFamily="Times New Roman" FontSize="16" Height="29">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label1_Copy" Foreground="Red" Content="* required fields" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="164,234,0,0" FontFamily="Times New Roman" FontSize="16"/>
 
     </Grid>
 </Window>

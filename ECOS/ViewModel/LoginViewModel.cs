@@ -61,11 +61,10 @@ namespace ECOS.ViewModel
 
         private void LogIn_method()
         {
-
             string role = Db_manager.check_login(User_name, Password, ref _log_status);
-            GUI_broker.Show_login_status(role, _log_status);
-           
-           
+            User_name = null;
+            Password = null;
+            GUI_broker.Show_login_status(role, _log_status);           
         }
 
 

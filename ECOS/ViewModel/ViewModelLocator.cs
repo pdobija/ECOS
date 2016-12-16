@@ -42,17 +42,9 @@ namespace ECOS.ViewModel
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
 
-            SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<WorkerViewModel>();
-        }
-
-        public MainViewModel Main
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
+            SimpleIoc.Default.Register<StudentViewModel>();
         }
         public LoginViewModel Log
         {
@@ -66,6 +58,14 @@ namespace ECOS.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<WorkerViewModel>();
+            }
+        }
+
+        public StudentViewModel Student
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<StudentViewModel>();
             }
         }
 

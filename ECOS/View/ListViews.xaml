@@ -7,22 +7,26 @@
              x:Name="_this"
              xmlns:viewModels="clr-namespace:ECOS.ViewModel"
              mc:Ignorable="d" Height="265" Width="530">
-    <Grid>
+    <Grid Margin="0,-1,0,1">
         <ListView ItemsSource="{Binding ElementName=_this, Path=ItemsSource}"
-         SelectedItem="{Binding ElementName=_this, Path=SelectedItem}" Margin="-5,90,0,0">
+         SelectedItem="{Binding ElementName=_this, Path=SelectedItem}" Margin="-5,90,0,0" FontFamily="Times New Roman" FontSize="14">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn  Width="70" Header="Worker ID" DisplayMemberBinding="{Binding Worker_ID}" />
-                    <GridViewColumn Width="170" Header="First Name" DisplayMemberBinding="{Binding First_name}"/>
-                    <GridViewColumn Width="170" Header="Last Name" DisplayMemberBinding="{Binding Last_name}"/>
+                    <GridViewColumn  Width="100" Header="Worker ID" DisplayMemberBinding="{Binding Worker_ID}" />
+                    <GridViewColumn Width="150" Header="First Name" DisplayMemberBinding="{Binding First_name}"/>
+                    <GridViewColumn Width="150" Header="Last Name" DisplayMemberBinding="{Binding Last_name}"/>
                     <GridViewColumn Width="115" Header="Degree" DisplayMemberBinding="{Binding Degree}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button" Content="Search" Cursor="Hand" Command="{Binding GetWorkerCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="420,30,-195,0"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="181,17,0,0" ToolTipService.IsEnabled="True" ToolTip="Fraze type from which you want to start search" TextWrapping="Wrap" Text="{Binding First_name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="180,52,0,0" ToolTipService.IsEnabled="True" ToolTip="Fraze type from which you want to start search" TextWrapping="Wrap" Text="{Binding Last_name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="First name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,19,0,0"/>
-        <Label x:Name="label1" Content="Last name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,49,0,0"/>
+        <Button x:Name="button" Content="Search" Cursor="Hand" Command="{Binding GetWorkerCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Margin="410,29,0,0" FontFamily="Times New Roman" FontSize="16" Height="30">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="181,17,0,0" ToolTipService.IsEnabled="True" ToolTip="Fraze type from which you want to start search" TextWrapping="Wrap" Text="{Binding First_name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="180,52,0,0" ToolTipService.IsEnabled="True" ToolTip="Fraze type from which you want to start search" TextWrapping="Wrap" Text="{Binding Last_name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label" Content="First name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,15,0,0" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label1" Content="Last name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="76,46,0,0" FontFamily="Times New Roman" FontSize="16"/>
     </Grid>
 </UserControl>

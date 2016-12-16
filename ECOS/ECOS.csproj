@@ -62,6 +62,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -84,27 +86,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Broker\AccountGenerator.cs" />
     <Compile Include="Broker\GUI_broker.cs" />
+    <Compile Include="Broker\Tester.cs" />
     <Compile Include="Command\CloseWindowCommand.cs" />
+    <Compile Include="Command\OpenStudentViewDetails.cs" />
     <Compile Include="Command\OpenWorkerViewDetails.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\IsNotNullConverter.cs" />
     <Compile Include="DataAccesLayer\Db_manager.cs" />
     <Compile Include="Enums\log_status.cs" />
+    <Compile Include="ViewModel\EditItemViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\StudentDetailsViewModel.cs" />
+    <Compile Include="ViewModel\StudentViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\WorkerDetailsViewModel.cs" />
     <Compile Include="ViewModel\WorkerViewModel.cs" />
-    <Compile Include="View\AdminView.xaml.cs">
-      <DependentUpon>AdminView.xaml</DependentUpon>
+    <Compile Include="View\ChooseEditItemView.xaml.cs">
+      <DependentUpon>ChooseEditItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentDesignView.xaml.cs">
+      <DependentUpon>StudentDesignView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentDetailsView.xaml.cs">
+      <DependentUpon>StudentDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentsListView.xaml.cs">
+      <DependentUpon>StudentsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WorkerDesignView.xaml.cs">
+      <DependentUpon>WorkerDesignView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ListViews.xaml.cs">
       <DependentUpon>ListViews.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Tester.cs" />
     <Compile Include="View\WorkerViewDetails.xaml.cs">
       <DependentUpon>WorkerViewDetails.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\ChooseEditItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,7 +141,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\AdminView.xaml">
+    <Page Include="View\StudentDesignView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StudentDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StudentsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WorkerDesignView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

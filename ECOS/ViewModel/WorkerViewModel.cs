@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using GalaSoft.MvvmLight;
-using System.Threading.Tasks;
+﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using ECOS.Models;
 using System.Collections.ObjectModel;
@@ -14,23 +9,11 @@ using ECOS.Broker;
 
 namespace ECOS.ViewModel
 {
- 
+
     public class WorkerViewModel : ViewModelBase
     {
-        private CloseWindowCommand _clsworkerDetails;
         private OpenWorkerViewDetails _workerDetailsCommand;
 
-        public CloseWindowCommand ClsWorkerDetails
-        {
-            get { return _clsworkerDetails; }
-            set
-            {
-                if (value == _clsworkerDetails)
-                    return;
-                _clsworkerDetails = value;
-                RaisePropertyChanged(() => ClsWorkerDetails);
-            }
-        }
         public OpenWorkerViewDetails WorkerDetailsCommand
         {
             get { return _workerDetailsCommand; }
@@ -63,12 +46,7 @@ namespace ECOS.ViewModel
         }
 
         private Worker _worker;
-        public WorkerViewModel(Worker current_worker)
-         : this()
-        {
-            _worker = current_worker;
-
-        }
+ 
         public WorkerViewModel()
         {
             worker = new Worker();
@@ -76,19 +54,25 @@ namespace ECOS.ViewModel
             GetWorkerCommand = new RelayCommand(() => Get_worker_collection());
             Logout = new RelayCommand(() => LogOut_method());
             WorkerDetailsCommand = new OpenWorkerViewDetails();
-            ClsWorkerDetails = new CloseWindowCommand();
             WorkerDetailsCommand.AfterExecuted += work =>
             {
-                if (work == null || workers.Contains(work) || !(View.Tester.test_worker(work)))
+                if (!(Booker.Tester.test_worker(work)))
                 {
+                    GUI_broker.show_creating_worker_status(true);
                     return;
+
                 }
-                GUI_broker.show_creating_worker_status(true);
-                Db_manager.add_worker(work);
-                workers.Add(work);
+                else if (!workers.Contains(work))
+                 {
+                    workers.Add(work);
+                    
+                }
+                
+                Db_manager.add_worker(work);     
+                GUI_broker.show_creating_worker_status(false);    
             };
         }
-
+  
         public Worker worker
         {
             get { return _worker; }
@@ -99,7 +83,6 @@ namespace ECOS.ViewModel
                 _worker = value;
                 RaisePropertyChanged(() => worker);
             }
-
         }
             
 

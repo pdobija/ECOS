@@ -10,7 +10,7 @@ namespace ECOS.Models
         public string User_name { get; set; }
         public string Password { set; get; }
         public string Role { set; get; }
-        public DateTime? Account_date { set; get; }
+        public bool IsEnable { set; get; }
         public int? Album_number { set; get; }
         public int? Worker_ID { set; get; }
 

@@ -7,15 +7,38 @@ namespace ECOS.Broker
     public static class GUI_broker
     {
 
-        public static void show_creating_worker_status(bool status)
+        public static void openWorkerDesigner()
         {
-            if(status)
-            {
-                MessageBox.Show("New worker has been added to the database", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-                MessageBox.Show("Not all fields have been correctly completed", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            AdminView WVD = new AdminView();
+            Application.Current.MainWindow.Close();
+            Application.Current.MainWindow = WVD;
 
+            WVD.ShowDialog();
+        }
+        public static void openStudentDesigner()
+        {
+            StudentDesignView WVD = new StudentDesignView();
+            Application.Current.MainWindow.Close();
+            Application.Current.MainWindow = WVD;
+
+            WVD.ShowDialog();
+        }
+        public static void show_creating_student_status(bool status)
+        {
+            if (status == true)
+                MessageBox.Show("The student was not added to the database because:\n\n- Not all the data has been completed\n- Access to the database is locked", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else if (status == false)
+                MessageBox.Show("Student has been updated/added to the database", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+        }
+        public static void show_creating_worker_status(bool? status)
+        {
+            if (status == true)
+                MessageBox.Show("The worker was not added to the database because:\n\n- Not all the data has been completed\n- Access to the database is locked", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else if (status == false)
+                MessageBox.Show("Worker has been updated/added to the database", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+ 
 
         }
         public static void Show_login_status(string role, log_status status)
@@ -29,17 +52,17 @@ namespace ECOS.Broker
                 case log_status.wrong_pass:
                     MessageBox.Show("The specified password is incorrect", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
                     break;
-                case log_status.out_of_date:
-                    MessageBox.Show("Validity of account has expired", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                case log_status.disable:
+                    MessageBox.Show("Acces to your account was disable", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
                     break;
                 case log_status.correct:
 
                     switch (role)
                     {
                         case "ADM":
-                            AdminView AdminView = new AdminView();
-                            Application.Current.MainWindow = AdminView;
-                            AdminView.ShowDialog();
+                            ChooseEditItemView EditView = new ChooseEditItemView();
+                            Application.Current.MainWindow = EditView;
+                            EditView.ShowDialog();
                    
                             break;
                     }

@@ -4,7 +4,7 @@
     {
         wrong_user,
         wrong_pass,
-        out_of_date,
+        disable,
         correct
     }
 }

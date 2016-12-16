@@ -7,19 +7,21 @@
         xmlns:Command="clr-namespace:GalaSoft.MvvmLight;assembly=GalaSoft.MvvmLight"
         xmlns:viewModels="clr-namespace:ECOS.ViewModel"
         mc:Ignorable="d"
-        Title="Log in" Height="302" Width="314" WindowStartupLocation="CenterScreen" d:DataContext="{Binding Path=Log , Source={StaticResource Locator}}" 
+        Title="ECOS SYSTEM" Height="302" Width="314" WindowStartupLocation="CenterScreen" d:DataContext="{Binding Path=Log , Source={StaticResource Locator}}" 
        ResizeMode="NoResize" >
     <Window.DataContext>
         <viewModels:LoginViewModel />
     </Window.DataContext>
-    <Grid>
-        <TextBox  x:Name="textBox1" HorizontalAlignment="Left" Margin="129,90,0,0" VerticalAlignment="Top" Width="120" Height="23" Text="{Binding User_name, UpdateSourceTrigger=PropertyChanged}" ToolTipService.IsEnabled="True" ToolTip="Enter the user name"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="129,138,0,0" TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" ToolTipService.IsEnabled="True" ToolTip="Enter the password"/>
-        <Button x:Name="button" Cursor="Hand" Command="{Binding LogIn_Command}" Content="Log in" HorizontalAlignment="Left" Margin="119,210,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
-        <Label x:Name="label" Content="User name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,90,0,0" FontWeight="Bold"/>
-        <Label x:Name="label_Copy" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,137,0,0" FontWeight="Bold"/>
-        <Label x:Name="label1" Content="Welcome in ECOS System" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,25,0,0" FontSize="16" FontWeight="Bold"/>
-
-        <!--<view:LogView DataContext="{Binding Path=Log, Source={StaticResource Locator} }" Margin="0,2,0,-2" Loaded="LogView_Loaded"/>-->
+    <Grid Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
+        <TextBox  x:Name="textBox1" HorizontalAlignment="Left" Margin="142,98,0,0" VerticalAlignment="Top" Width="125" Height="25" Text="{Binding User_name, UpdateSourceTrigger=PropertyChanged}" ToolTipService.IsEnabled="True" ToolTip="Enter the user name" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="27" Margin="142,142,0,0" TextWrapping="Wrap" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="125" ToolTipService.IsEnabled="True" ToolTip="Enter the password" FontFamily="Times New Roman" FontSize="16"/>
+        <Button x:Name="button" Cursor="Hand" Command="{Binding LogIn_Command}" Content="Log in" HorizontalAlignment="Left" Margin="104,211,0,0" VerticalAlignment="Top" Width="91" FontWeight="Bold" FontFamily="Times New Roman" FontSize="16" Height="30">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label" Content="User name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,95,0,0" FontWeight="Bold" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label_Copy" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,140,0,0" FontWeight="Bold" FontFamily="Times New Roman" FontSize="16" RenderTransformOrigin="0.765,1.179"/>
+        <Label x:Name="label1" Content="Welcome in ECOS System" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,22,0,0" FontSize="24" FontWeight="Bold" FontFamily="Times New Roman"/>
     </Grid>
 </Window>

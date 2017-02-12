@@ -1,6 +1,7 @@
 ﻿using ECOS.Enums;
 using System.Windows;
 using ECOS.View;
+using System;
 
 namespace ECOS.Broker
 {
@@ -32,6 +33,16 @@ namespace ECOS.Broker
 
 
         }
+
+        internal static void openSemesterDesigner()
+        {
+            SemesterDesignerView WVD = new SemesterDesignerView();
+            Application.Current.MainWindow.Close();
+            Application.Current.MainWindow = WVD;
+
+            WVD.ShowDialog();
+        }
+
         public static void show_creating_worker_status(bool? status)
         {
             if (status == true)

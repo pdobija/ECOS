@@ -29,7 +29,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
             </Button.Background>
         </Button>
-        <Button x:Name="button8" Content="Semester" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Margin="405,305,0,0" Cursor="Hand" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" Height="30">
+        <Button x:Name="button8" Content="Click here" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="296,232,0,0" Command="{Binding OpenSemesterDesignerCommand}" Cursor="Hand" FontFamily="Times New Roman" FontSize="16" FontWeight="Bold" Height="33">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
             </Button.Background>
@@ -42,6 +42,7 @@
         </Button>
         <Label x:Name="label_Copy2" Content="Adding/Editing workers..."  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,125,0,0" FontWeight="Bold" FontSize="20" FontFamily="Times New Roman" Cursor="None" Width="265" Height="35"/>
         <Label x:Name="label_Copy" Content="Adding/Editing students..."  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,179,0,0" FontWeight="Bold" FontSize="20" FontFamily="Times New Roman" Cursor="None" Width="265" Height="35"/>
+        <Label x:Name="label_Copy1" Content="Adding/Editing semesters..."  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,230,0,0" FontWeight="Bold" FontSize="20" FontFamily="Times New Roman" Cursor="None" Width="265" Height="35"/>
 
     </Grid>
 </Window>

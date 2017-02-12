@@ -86,9 +86,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Broker\AccountGenerator.cs" />
-    <Compile Include="Broker\GUI_broker.cs" />
-    <Compile Include="Broker\Tester.cs" />
+    <Compile Include="Infrastructure\AccountGenerator.cs" />
+    <Compile Include="Infrastructure\GUI_broker.cs" />
+    <Compile Include="Infrastructure\Tester.cs" />
     <Compile Include="Command\CloseWindowCommand.cs" />
     <Compile Include="Command\OpenStudentViewDetails.cs" />
     <Compile Include="Command\OpenWorkerViewDetails.cs" />
@@ -105,6 +105,9 @@
     <Compile Include="ViewModel\WorkerViewModel.cs" />
     <Compile Include="View\ChooseEditItemView.xaml.cs">
       <DependentUpon>ChooseEditItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SemesterDesignerView.xaml.cs">
+      <DependentUpon>SemesterDesignerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\StudentDesignView.xaml.cs">
       <DependentUpon>StudentDesignView.xaml</DependentUpon>
@@ -141,6 +144,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\SemesterDesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\StudentDesignView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -21,7 +21,7 @@
         <Label x:Name="label" Content="* Album number:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,70,0,0" FontFamily="Times New Roman" FontSize="16"/>
         <Label x:Name="label1" Content="* First name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,120,0,0" FontFamily="Times New Roman" FontSize="16"/>
         <Label x:Name="label2" Content="* Last name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,167,0,0" FontFamily="Times New Roman" FontSize="16"/>
-        <Label x:Name="label4" Content="Student INFO" HorizontalAlignment="Left" Margin="86,12,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <Label x:Name="label4" Content="Student INFO" HorizontalAlignment="Left" Margin="80,12,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontFamily="Times New Roman"/>
         <Button x:Name="button1" Content="OK"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Margin="37,225,0,0" Command="{Binding CloseWindowCommand}" CommandParameter="{Binding ElementName=_this}" FontFamily="Times New Roman" FontSize="16" Height="30" Cursor="Hand">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
